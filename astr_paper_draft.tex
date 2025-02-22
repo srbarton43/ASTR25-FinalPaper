@@ -1,0 +1,141 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN PREAMBLE
+\documentclass[12pt]{article}
+
+%%%% Sets 1 inch margins on document
+\usepackage[margin=1in]{geometry}
+
+%%%% For math macros
+\usepackage{amsmath}
+
+%%%% Needed for including figures and other images
+\usepackage{graphicx}
+
+%%%% Adds ability to adjust document vertical spacing
+% usage:
+%   \setspace{1.5} % 1.5x for line spacing
+\usepackage{setspace}
+
+%%%% Needed for specifying the list items in enumerate env
+% eg. (a,b,b) or (i,ii,iii), (1,2,3)
+% usage:
+%   \begin{enumerate} [label=(\alph*)] % for (a), (b), (c)
+\usepackage{enumitem}
+
+%%%% Defines Times New Roman as font
+  % for math and text environments
+\usepackage{newtxtext,newtxmath}
+
+%%%% For H float option when inserting figure
+%   [ht] inserts figure _exactly_ where it is typeset
+% usage:
+%   begin{figure} [ht]
+\usepackage{float}
+
+%%%% For fancy header and footer ;)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO,L]{Samuel Barton}
+\fancyhead[CO,C]{ASTR25 Term Paper - First Draft}
+\fancyhead[RO,R]{\today}
+\setlength{\headheight}{15pt}
+\fancyfoot[LO,L]{}
+\fancyfoot[CO,C]{\thepage}
+\fancyfoot[RO,R]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%%%% Setting margins in tabular environments
+% For making equations (esp. fractions) fit in cells vertically
+\usepackage{cellspace}
+\cellspacetoplimit 4pt
+\cellspacebottomlimit 4pt
+
+\title{
+{ASTR25 Term Paper -- First Draft}\\
+{\large Dartmouth College}
+}
+\author{Samuel Barton}
+\date{\today}
+
+\usepackage[backend=biber, style=nature]{biblatex} 
+\addbibresource{bibliography.bib}
+%% END PREAMBLE %\title{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\setstretch{2} % set spacing to 2x
+
+\section{Paper Details}
+
+{\large
+\textbf{Title:} Where to search for supermassive binary black holes\supercite{marziani2025} \\
+\textbf{Authors:} Paola Marziani, Edi Bon, Natasa Bon, Mauro D’Onofrio \\
+\textbf{First Author’s Institution:} National Institute for Astrophysics (INAF), Astronomical Observatory of Padova, IT-35122 Padova, Italy \\
+\textbf{Status:} Submitted
+}
+
+\section{Introduction}%                                                                 INTRODUCTION
+
+A black hole is a massive and compact astronomical object which is so dense that it prevents anything from escaping, even light, which is where they get their name. Black holes initially stemmed from Albert Einstein’s theory of general relativity as a strictly mathematical phenomenon, but the discovery of neutron stars by Jocelyn Bell Burnell in 1967 sparked interest in the reality that gravitationally collapsed objects, such as black holes, could be a possible astrophysical reality. Cygnus X-1 was the very first black hole discovered by Royal Greenwich Observatory astronomers in 1971.\supercite{Cygnus-X1} Supermassive black holes (SMBHs) are the largest type of black hole, with mass in the order of millions to even billions the mass of our sun. Our Milky Way galaxy is a spiral galaxy with a SMBH at its center. This SMBH is called Sagittarius A* and is seen in Figure \ref{sag_A}.
+
+
+\begin{figure} [ht]
+  \center
+  \includegraphics[width=0.5\textwidth]{figures/M87_blackhole.jpg}
+  \caption{The first direct image of a supermassive black hole, found in the galactic core of Messier 87. {\supercite{black_hole_image}}. https://www.eso.org/public/images/eso1907a}
+\end{figure}
+
+\begin{figure} [ht]
+  \center
+  \includegraphics[width=0.5\textwidth]{figures/sag_A.jpg}
+  \caption{Sagittarius A* imaged by the Event Horizon Telescope in 2017, released in 2022. https://www.eso.org/public/images/eso2208-eht-mwa}
+  \label{sag_A}
+\end{figure}
+
+Supermassive binary black holes (SMBBHs) are pairs of SMBHs that orbit one another at the center of galaxies. They are widely believed to be byproducts of galaxy mergers. As these galaxies merge, their central SMBHs are brought together by dynamical friction, and they may eventuall form a bound binary system, a system consisting of two objects that are gravitationally linked, orbiting a common center of mass. \supercite{ komossa2021}  As the two black holes draw closer over time, their orbits decay through interactions with stars, gas, and gravitational ways, resulting in their eventual merge. \supercite{begelman_SMBBH} SMBHHs are relevant for understanding a wide range of astrophyisical processes including but limited to 	galaxy evolution, fueling active galactic nuclei (AGN), and the generation of gravitational waves.\supercite{marziani2025}
+
+\begin{figure} [ht]
+  \center
+  \includegraphics[width=0.6\textwidth]{figures/smbbh_model.jpg}
+  \caption{Surface brightness map for the inner $\sim$50M of the accretion flow for three different frequencies, averaged during the fifth orbit. From simulations modelling the dynamics of a circumbinary disk and the mini-disks that form around two equal-mass black holes orbiting each other at an initial separation of 20 gravitational radii in Guti\'errez et. al. \supercite{Gutierrez_2022}}
+\end{figure}
+
+\section{Goals of Paper}%                                                             GOALS OF PAPER
+
+Despite their prevalence in theoretical studies and research, direct observational evidence for SMBHHs remains minimal, with only a few candidates identified to date. While detectors from the Laser Interferometer Gravitational-Wave Observatory (LIGO) detected the merger of two stellar-mass black holes detecting the characteristic gravitational ripples back in 2016, these methods may not work for detecting SMBBHs. \supercite{Abbott_2016} These systems are too big and too far apart for Earth-based systems such as LIGO to detect; the pairs create waves so long that it could take years or even decades for the waves to fully crest over Earth. Therefore, the major goal of Marziani et. al was to propose new methods for searching for SMBBHs.
+
+\section{Techniques}%                                                                     TECHNIQUES
+
+The paper explores optimal strategies and key environments for locating these SMBBHs, focusing on EM radiation signatures in the Balmer lines. Since a blind search over the full AGN population will most likely be overwhelmed by red noise characteristics of the light curves amongst other issues, the paper proposes that an efficient search for SMBHHs must be highly focused. Therefore, the study focuses primarily on the quasar main sequence (MS), an effective tool for organizing the diversity of type-1 AGN, and one which is well defined for SMBBH detection. Inside of the MS, the study focuses on a specific spectral type, and conducts a detailed analysis on the emission line profiles of the Balmer HI line H$\beta$ and the UV resonance line Mg$_{II} \lambda 2800$. The line profile of this spectral type exhibits emission line profiles that can be interpreted as being disturbed by the presence of a secondary compact object, potentially another SMBH. See Figure \ref{fig:ms_diagram} for a schematic of the quasar main sequence in the optical plane.
+
+\begin{figure} [ht]
+  \center
+  \includegraphics[width=0.6\textwidth]{figures/MS_figure.png}
+  \caption{A schematic representation of the optical plane of the quasar main sequence, with the subdivisions into spectral bins clearly marked. The numbers in square brackets beneath each spectral type label indicate the prevalence of the spectral type ( number $n_{ST}$ of sources in each spectral type normalized by the number of sources in the full sample), and the fraction of RL (jetted) sources $n_{RL}/n_{ST}$ within each type.\supercite{marziani2025}}
+  \label{fig:ms_diagram}
+\end{figure}
+
+From the MS, the selection criterion is based on the presence of peculiarities in the emission line profiles. Double or multi-peaked profiles, and strongly shifted emission lines are rare. 
+
+\section{Significance}%                                                                 SIGNIFICANCE
+
+Using the interpretation that the emission line profiles Balmer HI line H$\beta$ and the UV resonance line Mg$_{II} \lambda 2800$ mean the presence of a secondary compact object, the study identifies a set of promising candidates for further monitoring. Looking along the MS, the study finds that these rare profiles are concentrated among quasars with the broadest H$\beta$ profiles. Seventeen sources belong to spectral type B1$^{++}$. 
+
+There are two possible interpretations of these anomalies: the first is that the profile is affected by an outflow, and the second is that there is a perturbation yielding a shifted peak, i.e. a SMBH. While the study states that it is impossible to rule out the first interpretation, several factors point towards the second interpretation being more favorable. In the case of B1$^{++}$, the large shift of profiles make the outflow unlikely. In the H$\beta$ component of Population B, the outflow component is present, but it is typically associated with the semi-broad component of [OIII]λλ4959,5007, and the shift is relatively small. 
+
+[I need some help understanding page 7 but the average optical luminosity of B1++, implies a BLR, radius which could identify them as sub-parsec binary candidates]
+Therefore, the study predicts that the peculiar, displaced peaks may show some systematic shift over a timeframe of 10-20 yr. Therefore this spectral type can be considered a testbed for the model proposed in the paper. 
+Since the sample in the study has such large masses, the inspiral motions may produce gravitational waves of frequencies in the domain of the Pulsar Timing Array ($v \sim 10^{-9}$), meaning they would be detected by systems such as LIGO or LISO in the near future. 
+
+Future multi-wavelength campaigns and gravitational wave observations will be essential to confirm the systems proposed in the paper. Sub-parsec binaries within the spectral class explored in the paper may provide crucial insights in the roles of tidal forces and binary-induced disk perturbations for shaping AGN emission profiles and evolutionary pathways. 
+
+
+\pagebreak
+
+\printbibliography
+
+\end{document}
