@@ -1,0 +1,6 @@
+*
+!*.tex
+!*.bib
+!figures/*
+!*.pdf
+!.gitignore
